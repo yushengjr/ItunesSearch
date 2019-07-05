@@ -1,29 +1,24 @@
-# AngularCodingQuestions
+1.	Create a page that contains one input(title), one textarea(body) and 1 button. In addtion,  need to use ngModel to do 2 way binding.
+2.	Create a service to fetch data:
+- URL:https://jsonplaceholder.typicode.com/posts
+- Use HttpClient.get to get information
+- Use HttpClient.post to insert post object that includes title and body.
 
-This is a repo to record the Angular interview coding questions.
+- POST Example:
+```
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: 'foo',
+      body: 'bar',
+      userId: 1
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
+```
 
-## How to record your Angular interview coding questions using this repo:
-
-### Clone your repo:
-
-- open your teminal.
-- cd your_work_dir.
-- git clone https://github.com/Patrick-FRE/Angular-coding-questions.git
-
-### Create your branch:
-
-- cd Angular-coding-questions
-- git branch your_client_name-month-day-year
-  (example:
-  if your clent name is Apple,Inc and your interview date is 08-09-2019, then:
-  git branch apple-08-09-2019)
-
-### Checkout your banch:
-
-- git checkout your_client_name-month-day-year
-
-### Update your Angular interview coding questions to your branch:
-
-- Over write the README.md base on the requirement:
-- commit it with the message "update the requirement"
-- Try to rebuild the answer of the coding question.
+3.	How to test the Onsubmit method?
