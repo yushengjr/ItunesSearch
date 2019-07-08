@@ -21,4 +21,7 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   .then(json => console.log(json))
 ```
 
-3.	How to test the Onsubmit method?
+- 3.Testing requirement:
+- Need to test the component has input,textarea,button.
+- Need to test ngFor can show the list with 10 items maximum.
+- Need to test onSubmit() method works.
