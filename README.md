@@ -4,7 +4,7 @@ This is a repo to record the Angular interview coding questions.
 
 ## How to record your Angular interview coding questions using this repo:
 
-### Clone your repo:
+### Clone this repo:
 
 - open your teminal.
 - cd your_work_dir.
@@ -32,3 +32,15 @@ This is a repo to record the Angular interview coding questions.
 ### Push yor local branch to origin
 
 - git push origin your_client_name-month-day-year
+
+## How to check Angular interview coding questions using this repo:
+
+### Clone this repo:
+
+- open your teminal.
+- cd your_work_dir.
+- git clone https://github.com/Patrick-FRE/Angular-coding-questions.git
+
+### Checkout the banch you would like to see:
+
+git checkout client_name-month-day-year
