@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <input type="text" [(ngModel)]="title" placeholder="Title" />
+  </div>
+  <div>
+    <label for="textBody">Body</label>
+  </div>
+  <textarea id="textBody" name="textBody" rows="5" cols="33" [(ngModel)]="body"></textarea>
+  <div>
+    <button type="button" (click)="onSubmit()">Submit</button>
+  </div>
+  <div>
+      <table>
+          <tr>
+            <th>UserId</th>
+            <th>id</th>
+            <th>title</th>
+            <th>body</th>
+          </tr>
+          <tr *ngFor="let item of items">
+            <td>{{item.userId}}</td>
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.body}}</td>
+          </tr>
+        </table>
+  </div>
+</div>
