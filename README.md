@@ -43,4 +43,4 @@ This is a repo to record the Angular interview coding questions.
 
 ### Checkout the banch you would like to see:
 
-git checkout client_name-month-day-year
+- git checkout client_name-month-day-year
