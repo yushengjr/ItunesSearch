@@ -1,0 +1,45 @@
+<div>
+  <form>
+    <div class="form-group">
+      <input
+        type="text"
+        class="title"
+        value="Title"
+        name="title"
+        [(ngModel)]="formTitle"
+      />
+    </div>
+    <hr />
+    <div class="form-group">
+      <textarea
+        rows="5"
+        cols="50"
+        class="body"
+        name="body"
+        [(ngModel)]="formBody"
+      >
+       Enter your description
+      </textarea>
+    </div>
+    <button class="submit" (click)="onSubmit()">Submit</button>
+  </form>
+</div>
+<div>
+  <p>{{ formTitle }}</p>
+  <p>{{ formBody }}</p>
+</div>
+<!-- table -->
+<table>
+  <tr>
+    <th>userId</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  <tr *ngFor="let item of itemList" class="post-row">
+    <td>{{ item.userId }}</td>
+    <td>{{ item.id }}</td>
+    <td>{{ item.title }}</td>
+    <td>{{ item.body }}</td>
+  </tr>
+</table>

@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  font-size: 11px;
+  grid-template-columns: auto auto auto;
+}
+.grid-item {
+  border: solid grey 2px;
+  border-radius: 25px;
+  text-align: center;
+  overflow: hidden;
+}
+.grid-item > img {
+  padding: 3px;
+}

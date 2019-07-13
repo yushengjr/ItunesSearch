@@ -1,18 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { HttpClientModule } from "@angular/common/http";
+import { PipePipe } from "./shared/pipe/pipe.pipe";
+import { PostComponent } from './post/post.component';
+import { SearchComponent } from './home/header/search/search.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './home/header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, PipePipe, PostComponent, SearchComponent, HomeComponent, HeaderComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

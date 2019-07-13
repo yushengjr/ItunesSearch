@@ -1,0 +1,16 @@
+<nav class=" navbar navbar-default">
+  <div class="navbar-header">
+    <ul class="nav navbar-nav">
+      <li><a>Home</a></li>
+      <li>
+        <div class="search-bar">
+          <input type="text" #searchElement />
+          <button class="btn btn-primary " (click)="search(searchElement)">
+            Search
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<app-search [searchResult]="searchList"></app-search>
