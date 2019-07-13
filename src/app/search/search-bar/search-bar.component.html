@@ -1,0 +1,11 @@
+<label>
+  Search By Name:
+  <input type="text" [formControl]="name">
+  <input type="button" (click)="search()" value="Search">
+</label>
+<ul>
+  <li *ngFor="let artist of artistList">
+    {{artist.name}}
+    <img src="{{artist.albumCover}}">
+  </li>
+</ul>
