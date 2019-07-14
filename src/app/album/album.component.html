@@ -7,7 +7,7 @@
           <th>Album Cover</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngIf="artistList.length !== 0;else notFound">
         <tr *ngFor="let artist of artistList">
           <td>{{ artist.name }}</td>
           <td><img src="{{artist.albumCover}}"></td>
@@ -24,3 +24,10 @@
     <!-- <div>Waiting for search</div> -->
   </div>
 </ng-container>
+<ng-template #notFound>
+  <tbody>
+    <tr>
+      <td>Sorry, Not Found</td>
+    </tr>
+  </tbody>
+</ng-template>
