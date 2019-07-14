@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { SearchService } from '../search.service';
-import { Artist } from '../model/artist';
 
 @Component({
   selector: 'app-search-bar',
@@ -10,19 +9,11 @@ import { Artist } from '../model/artist';
 })
 export class SearchBarComponent implements OnInit {
   name = new FormControl('');
-  artistList: Artist[];
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
-    this.artistList = [];
   }
-  search() {
-    this.searchService.getArtistList(this.name.value).subscribe(
-      artists => {
-        this.artistList = artists;
-      },
-      err => console.error(err)
-    );
+  search = () => {
+    this.searchService.getArtistList(this.name.value);
   }
-
 }

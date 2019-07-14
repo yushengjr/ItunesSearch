@@ -1,3 +1,26 @@
-<p>
-  album works!
-</p>
+<ng-container [ngSwitch]="searchStatus">
+  <div *ngSwitchCase="'end'">
+    <table class="table">
+      <thead>
+        <tr class="active">
+          <th>Artist Name</th>
+          <th>Album Cover</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let artist of artistList">
+          <td>{{ artist.name }}</td>
+          <td><img src="{{artist.albumCover}}"></td>
+          <!-- <td>{{ post.title | uppercase }}</td> -->
+          <!-- <td>{{ post.body | stringParser }}</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngSwitchCase="'start'">
+    <div class="loader"></div>
+  </div>
+  <div *ngSwitchDefault>
+    <!-- <div>Waiting for search</div> -->
+  </div>
+</ng-container>

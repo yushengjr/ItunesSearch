@@ -8,6 +8,7 @@ import { SearchComponent } from './search/search.component';
 import { SearchBarComponent } from './search/search-bar/search-bar.component';
 import { ArtistListPipe } from './pipe/artist-list.pipe';
 import { AlbumComponent } from './album/album.component';
+import { KeyEnterDirective } from './directive/key-enter.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AlbumComponent } from './album/album.component';
     SearchComponent,
     SearchBarComponent,
     ArtistListPipe,
-    AlbumComponent
+    AlbumComponent,
+    KeyEnterDirective
   ],
   imports: [
     BrowserModule,
