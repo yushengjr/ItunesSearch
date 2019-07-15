@@ -27,9 +27,9 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.searchClick$ = merge(fromEvent(this.button.nativeElement, 'click'), fromEvent(this.input.nativeElement, 'keypress'));
     this.subscriber = this.searchClick$.pipe(
-      filter( event => event.code === 'Enter' || event.type === 'click'),
+      filter( event => (event.code === 'Enter' || event.type === 'click') && this.name.value.length > 0),
       map(v => this.name.value),
-      debounceTime(300),
+      debounceTime(400),
       distinctUntilChanged(),
       switchMap((term: string) => this.searchService.getArtistList(term)),
       catchError(err => throwError(err))

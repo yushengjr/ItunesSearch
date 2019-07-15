@@ -3,16 +3,18 @@
     <table class="table">
       <thead>
         <tr class="active">
+          <th>Artist ID</th>
           <th>Artist Name</th>
+          <th>Album Name</th>
           <th>Album Cover</th>
         </tr>
       </thead>
       <tbody *ngIf="artistList.length !== 0;else notFound">
         <tr *ngFor="let artist of artistList">
+          <td>{{ artist.id }}</td>
           <td>{{ artist.name }}</td>
+          <td>{{ artist.albumName }}</td>
           <td><img src="{{artist.albumCover}}"></td>
-          <!-- <td>{{ post.title | uppercase }}</td> -->
-          <!-- <td>{{ post.body | stringParser }}</td> -->
         </tr>
       </tbody>
     </table>

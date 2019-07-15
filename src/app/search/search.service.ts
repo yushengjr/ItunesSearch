@@ -20,7 +20,7 @@ export class SearchService implements OnDestroy {
 
   getArtistList = (artist: string) => {
     this.searching.emit('start');
-    return this.http.jsonp(`${environment.baseUrl}search?term=${artist}&callback=JSONP_CALLBACK`, 'searchArtist')
+    return this.http.jsonp(`${environment.baseUrl}search?term=${artist}&entity=album&callback=JSONP_CALLBACK`, 'searchArtist')
     .pipe(
       map((res: any) => res.results.map(
         (ars: any) => new Artist(ars)
