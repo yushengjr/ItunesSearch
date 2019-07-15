@@ -49,5 +49,4 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 ```
 
 3.	How to test the Onsubmit method?
-=======
->>>>>>> ed8f46b51143d5016460aa6bd9c08e668eacebfb
+
