@@ -3,6 +3,7 @@
 1. Clone or download the repository to your local storage
 2. Run `npm install` to install necessary dependencies
 3. Run `ng serve --o`, this will compile your angular code and automatically run your application in your browser
+<<<<<<< HEAD
 
 #Tab 1 Search Album
 
@@ -48,3 +49,5 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 ```
 
 3.	How to test the Onsubmit method?
+=======
+>>>>>>> ed8f46b51143d5016460aa6bd9c08e668eacebfb
