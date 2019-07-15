@@ -6,11 +6,9 @@ import {
   distinctUntilChanged,
   switchMap,
   map,
-  combineAll,
   filter,
 } from 'rxjs/operators';
-import { Observable, fromEvent, merge, Subscriber, Subscription } from 'rxjs';
-import { Artist } from '../model/artist';
+import { Observable, fromEvent, merge, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-search-bar',
@@ -26,14 +24,16 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   constructor(private searchService: SearchService) {}
 
   ngOnInit() {
-    this.searchClick$ = merge(fromEvent(this.button.nativeElement, 'click'), fromEvent(this.input.nativeElement, 'keypress'));
+    this.searchClick$ = merge(fromEvent(this.input.nativeElement, 'keypress'));
     this.subscriber = this.searchClick$.pipe(
       filter( v => v.code === 'Enter'),
       map(v => this.name.value),
       debounceTime(300),
       distinctUntilChanged(),
       switchMap((term: string) => this.searchService.getArtistList(term))
-    ).subscribe();
+    ).subscribe(
+      (res) => this.searchService.artistsUpdate.emit(res)
+    );
 
     /** //if any input changed, do search.
     this.name.valueChanges.pipe(
