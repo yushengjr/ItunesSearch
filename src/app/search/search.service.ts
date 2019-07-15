@@ -16,11 +16,21 @@ export class SearchService implements OnDestroy {
   /** jsonp solution
    * 1.Treat as js file, parse back to Json
    * 2.Only work on GET
+  getArtistList = (artist: string) => {
+    this.searching.emit('start');
+    return this.http.jsonp(`${environment.baseUrl}search?term=${artist}&entity=album&callback=JSONP_CALLBACK`, 'searchArtist')
+    .pipe(
+      map((res: any) => res.results.map(
+        (ars: any) => new Artist(ars)
+      )),
+      catchError( err => throwError(err))
+    );
+  }
    */
 
   getArtistList = (artist: string) => {
     this.searching.emit('start');
-    return this.http.jsonp(`${environment.baseUrl}search?term=${artist}&entity=album&callback=JSONP_CALLBACK`, 'searchArtist')
+    return this.http.get(`${environment.baseUrl}search?term=${artist}&entity=album`)
     .pipe(
       map((res: any) => res.results.map(
         (ars: any) => new Artist(ars)
