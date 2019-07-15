@@ -11,8 +11,9 @@
   <div *ngIf="artistInfo && artistInfo.length !== 0; else elseBlock">
     <div class="artist">
       <a [href]="artistInfo[0].artistViewUrl" target="_blank" class="artist-name">
-        About <span id="name">{{artistInfo[0].artistName}}</span>
+        <span id="name">{{artistInfo[0].artistName}}</span>'s
       </a>
+      Album
     </div>
     <div >
       <ul class="album-container">
