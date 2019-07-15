@@ -5,11 +5,11 @@
 3. Run `ng serve --o`, this will compile your angular code and automatically run your application in your browser
 
 
-#Tab 1 Assignment 1: Search Album
+# Tab 1 Assignment 1: Search Album
 
 This is a small application that implements a iTunes API search to display album information for a given artist.
 
-#### Original requirements #1
+#### Original requirement #1
 
 // 1. Create a Search Component for entering an Artist
 
@@ -22,9 +22,9 @@ This is a small application that implements a iTunes API search to display album
 
 
 ***
-#Tab 2 Assignment 2: Play with http post
+# Tab 2 Assignment 2: Play with http post
 
-#### Original requirements #2
+#### Original requirement #2
 1.	Create a page that contains one input(title), one textarea(body) and 1 button. In addtion,  need to use ngModel to do 2 way binding.
 2.	Create a service to fetch data:
 - URL:https://jsonplaceholder.typicode.com/posts
