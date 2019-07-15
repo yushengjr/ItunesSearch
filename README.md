@@ -1,4 +1,4 @@
-This is a small application that implementation a iTunes API search to display album information for a given artist.
+This is a small application that implements a iTunes API search to display album information for a given artist.
 
 ## How to start the application
 1. clone or download the repository to your local storage
