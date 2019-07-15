@@ -1,6 +1,6 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { Artist } from './model/artist';
 import { environment } from 'src/environments/environment';
 import { map, catchError } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { map, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class SearchService {
+export class SearchService implements OnDestroy {
   public artistsUpdate = new EventEmitter<Artist[]> ();
   public searching = new EventEmitter<string> ();
   constructor(private http: HttpClient) {  }
@@ -30,6 +30,10 @@ export class SearchService {
     observableResult.subscribe(res => {
       this.artistsUpdate.emit(res);
     });
+    return observableResult;
+  }
+  ngOnDestroy() {
+    // this.observableResult.
   }
 
 }
