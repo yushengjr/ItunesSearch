@@ -3,9 +3,9 @@
 1. Clone or download the repository to your local storage
 2. Run `npm install` to install necessary dependencies
 3. Run `ng serve --o`, this will compile your angular code and automatically run your application in your browser
-<<<<<<< HEAD
 
-#Tab 1 Search Album
+
+#Tab 1 Assignment 1: Search Album
 
 This is a small application that implements a iTunes API search to display album information for a given artist.
 
@@ -22,9 +22,9 @@ This is a small application that implements a iTunes API search to display album
 
 
 ***
+#Tab 2 Assignment 2: Play with http post
 
-
-### Original requirements #2
+#### Original requirements #2
 1.	Create a page that contains one input(title), one textarea(body) and 1 button. In addtion,  need to use ngModel to do 2 way binding.
 2.	Create a service to fetch data:
 - URL:https://jsonplaceholder.typicode.com/posts
