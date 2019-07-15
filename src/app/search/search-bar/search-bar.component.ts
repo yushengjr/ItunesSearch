@@ -7,8 +7,9 @@ import {
   switchMap,
   map,
   filter,
+  catchError,
 } from 'rxjs/operators';
-import { Observable, fromEvent, merge, Subscription } from 'rxjs';
+import { Observable, fromEvent, merge, Subscription, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-search-bar',
@@ -30,7 +31,8 @@ export class SearchBarComponent implements OnInit, OnDestroy {
       map(v => this.name.value),
       debounceTime(300),
       distinctUntilChanged(),
-      switchMap((term: string) => this.searchService.getArtistList(term))
+      switchMap((term: string) => this.searchService.getArtistList(term)),
+      catchError(err => throwError(err))
     ).subscribe(
       (res) => this.searchService.artistsUpdate.emit(res)
     );
