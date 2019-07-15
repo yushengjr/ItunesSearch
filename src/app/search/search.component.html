@@ -1,0 +1,39 @@
+<div class="search-container">
+    <form >
+      <input #searchBox type="text" id= "search-box" placeholder="Search.." name="search" (keydown) = "onKeyDown($event)">
+      <button type="button" (click)="getInfo(searchBox.value)" id="search-button">
+          <i class="fa fa-search"></i>
+      </button>
+    </form>
+</div>
+
+<div class="result-container">
+  <div *ngIf="artistInfo && artistInfo.length !== 0; else elseBlock">
+    <div class="artist">
+      <a [href]="artistInfo[0].artistViewUrl" target="_blank" class="artist-name">
+        About <span id="name">{{artistInfo[0].artistName}}</span>
+      </a>
+    </div>
+    <div >
+      <ul class="album-container">
+        <li *ngFor="let info of collections" class="album-item">
+          <div style="text-align: center">
+              <a [href]="info.collectionViewUrl" target="_blank" >
+                <div class="image-box">
+                  <img [src]="info.artworkUrl100" alt="" >
+                </div>
+              </a>
+              <div class="album-name">{{info.collectionName}}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="notFound" class="not-found">Result Not Found</div>
+
+  <ng-template #elseBlock>
+      <div *ngIf="searching" class="loader"></div>
+  </ng-template>
+
+</div>
