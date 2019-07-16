@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchJsonService } from 'src/app/SearchJSON/search-json.service';
 import { SearchLogicService } from 'src/app/APIService/search-logic.service';
+import { getTypeNameForDebugging } from '@angular/core/src/change_detection/differs/iterable_differs';
 
 @Component({
   selector: 'app-search-album',
@@ -21,8 +22,8 @@ export class SearchAlbumComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
 
+  ngOnInit() {
   }
 
 }

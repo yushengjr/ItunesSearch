@@ -13,7 +13,7 @@ export class SearchLogicService {
 
   getAllAlbums(artistName:String):Observable<SearchJsonService[]>{
     return this.httpClient
-      .get('https://itunes.apple.com/search?entity=musicTrack&attribute=allArtistTerm&limit=100&term=${'+ artistName+ '}')
+      .get('https://itunes.apple.com/search?entity=album&attribute=allArtistTerm&limit=100&term=${'+ artistName+ '}')
       .pipe(map(response=> response['results'].sort(this.sortByName) as SearchJsonService[]), catchError(error=>throwError(error)));
   }
   sortByName(a,b):number {

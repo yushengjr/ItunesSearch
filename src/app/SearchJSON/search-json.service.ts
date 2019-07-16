@@ -3,8 +3,8 @@ export class SearchJsonService {
   constructor() { }
 
   artistName: String;
-  trackId: number;
-  trackName: String;
+  artistId: number;
+  primaryGenreName: String;
   collectionName: String;
   artworkUrl60: String;
   collectionViewUrl:String;
