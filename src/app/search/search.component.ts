@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ArtistService } from "../artist.service";
+import { ArtistService } from "../services/artist.service";
 import { Album } from "../interface/ItunesAPI.interface";
 
 @Component({
