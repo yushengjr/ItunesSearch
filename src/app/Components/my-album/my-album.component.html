@@ -1,0 +1,17 @@
+<div id='rootDiv'>
+  <div id='header' ng-app="">
+      <span id='intro'>{{ intro }}</span>&nbsp;<input type="text" [(ngModel)]="artName"/>
+      &nbsp;
+      <button (click)='buttonClicked()'>{{ contentOfSearchButton }}</button>
+  </div>
+  <div id='content'>
+    <div id='shelf'>
+      <div  id='details' *ngFor="let d of dts">
+        <p id='songName'><b>{{ d.name }}</b></p>
+        <img [src]="d.cover" alt="" class='image' [id]='d.ID' (click)='imageClicked(d.ID)'>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+</div>

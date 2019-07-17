@@ -1,0 +1,58 @@
+#rootDiv{
+    margin: 5px 5px 5px 0px;
+    background: url('../../images/4.jpg');
+    background-size: 100%;
+}
+
+#header{
+    padding-top: 30px;
+    text-align: center;
+}
+#content{
+    overflow-y: scroll;
+    height: 550px;
+    width: 860px;
+    border-radius: 20px;
+    border: 5px solid grey;
+    margin: 0 auto;
+    margin-top: 30px;
+    opacity: 0.9;
+}
+
+#shelf{
+    background: url('../../images/1.png');
+    background-repeat: repeat-y;
+    text-align: center;
+    width: 845px;
+    min-height: 550px;
+
+    display: grid;
+    grid-template-columns: 250px 250px 250px;
+}
+
+#details{
+    margin: 45px 0px 0px 50px;
+}
+
+#songName{
+    height: 25px;
+    text-shadow: 5px -5px 4px #663300;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #180000;
+}
+
+.image{
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 10px -8px 4px #664400;  
+    transition: all 0.4s;
+}
+
+#intro{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.image:hover{
+    transform: scale(1.4);
+}
