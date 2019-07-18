@@ -1,0 +1,41 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <input #artistName type="text" placeholder="Please Enter the Artist Name">
+        <button class="btn btn-outline-dark" (click)="showAlbumResult(artistName.value)">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container_two">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="grid-container">
+          <div *ngFor="let album of resultData" class="grid-item">
+              <img src={{album.artworkUrl100}} alt="">
+              <br>
+              <a href="#">
+                <h6 (click)="getInfo()">{{album.trackName}}</h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="grid-container">
+            <div *ngFor="let album of resultData" class="grid-item">
+                <img src={{album.artworkUrl100}} alt="">
+                {{album.trackName}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
