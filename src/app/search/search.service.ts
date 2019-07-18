@@ -39,7 +39,7 @@ export class SearchService implements OnDestroy {
     );
   }
   ngOnDestroy() {
-    // this.observableResult.
+
   }
 
 }
