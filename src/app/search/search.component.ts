@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { ArtistService } from "../services/artist.service";
-import { Album } from "../interface/ItunesAPI.interface";
+import { Component, OnInit } from '@angular/core';
+import { ArtistService } from '../services/artist.service';
+import { Album } from '../interface/ItunesAPI.interface';
 
 @Component({
-  selector: "app-search",
-  templateUrl: "./search.component.html",
-  styleUrls: ["./search.component.scss"]
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
   // artistName: string;
@@ -14,11 +14,11 @@ export class SearchComponent implements OnInit {
   searching = false;
   notFound = false;
 
-  constructor(private artistService: ArtistService) {}
+  constructor(private artistService: ArtistService) { }
 
   private getAlbums() {
     const tracker = new Set();
-    if (typeof this.artistInfo !== "undefined") {
+    if (typeof this.artistInfo !== 'undefined') {
       this.artistInfo.forEach(ele => {
         if (!tracker.has(ele.collectionName)) {
           tracker.add(ele.collectionName);
@@ -39,7 +39,7 @@ export class SearchComponent implements OnInit {
   }
 
   getInfo(artistName: string) {
-    //clean up search history
+    // clean up search history
     this.artistInfo = [];
     this.collections = [];
 
@@ -49,20 +49,20 @@ export class SearchComponent implements OnInit {
     this.artistService.getAlbumsByArtistName(artistName).subscribe(
       res => {
         console.log(res);
-        this.artistInfo = res["results"];
+        this.artistInfo = res['results'];
         this.getAlbums();
       },
       error => console.log(error)
     );
   }
 
-  //prevent refreshing page when hitting "Enter"
+  // prevent refreshing page when hitting "Enter"
   onKeyDown(event) {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       event.preventDefault();
       this.getInfo(event.target.value);
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
